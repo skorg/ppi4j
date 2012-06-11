@@ -12,6 +12,7 @@
   
   <name>ppi4j</name>
   <inceptionYear>2012</inceptionYear>
+  <url>http://scriptkitty.org/ppi4j</url>
 
   <organization>
     <name>scriptkitty.org</name>
@@ -27,6 +28,7 @@
   </licenses>
   
   <properties>
+    <siteDirectory>${basedir}/site</siteDirectory>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
@@ -42,12 +44,12 @@
     <dependency>
       <groupId>org.scriptkitty</groupId>
       <artifactId>perl-utils</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.0</version>
+      <version>4.8.2</version>
       <scope>test</scope>
       <optional>true</optional>
     </dependency>
@@ -56,5 +58,5 @@
   <scm>
     <url>https://github.com/skorg/ppi4j</url>
   </scm>
-
+  
 </project>
