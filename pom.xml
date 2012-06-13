@@ -11,12 +11,11 @@
   <version>1.2.0-SNAPSHOT</version>
   
   <name>ppi4j</name>
-  <inceptionYear>2012</inceptionYear>
-  <url>http://scriptkitty.org/ppi4j</url>
+  <inceptionYear>2012</inceptionYear>  
 
   <organization>
     <name>scriptkitty.org</name>
-    <url>http://scriptkitty.org</url>
+    <url>http://scriptkitty.org/ppi4j</url>
   </organization>
 
   <licenses>
@@ -27,17 +26,35 @@
     </license>
   </licenses>
   
-  <properties>
-    <siteDirectory>${basedir}/site</siteDirectory>
+  <properties>    
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+    <jar.useDefaultManifestFile>true</jar.useDefaultManifestFile>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
     <testSourceDirectory>${basedir}/test</testSourceDirectory>  
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>1.4.0</version>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
   </build>
 
   <dependencies>
