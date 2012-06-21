@@ -6,50 +6,22 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.scriptkitty</groupId>
+  <parent>
+    <groupId>org.scriptkitty</groupId>
+    <artifactId>skorg-build</artifactId>
+    <version>1</version>
+  </parent>
+
   <artifactId>ppi4j</artifactId>
   <version>1.2.0-SNAPSHOT</version>
-  
+
   <name>ppi4j</name>
-  <inceptionYear>2012</inceptionYear>  
+  <url>http://scriptkitty.org</url>
+  <description>java port of perl's PPI modules</description>
 
   <organization>
-    <name>scriptkitty.org</name>
-    <url>http://scriptkitty.org/ppi4j</url>
+    <url>http://ppi4j.scriptkitty.org</url>
   </organization>
-
-  <licenses>
-    <license>
-      <name>Eclipse Public License - v 1.0</name>
-      <url>http://www.eclipse.org/legal/epl-v10.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  
-  <properties>    
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
-    <jar.useDefaultManifestFile>true</jar.useDefaultManifestFile>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <build>
-    <sourceDirectory>${basedir}/src</sourceDirectory>
-    <testSourceDirectory>${basedir}/test</testSourceDirectory>  
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <archive>
-            <manifestFile>${basedir}/META-INF/MANIFEST.MF</manifestFile>
-          </archive>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
   <dependencies>
     <dependency>
@@ -57,17 +29,17 @@
       <artifactId>perl-utils</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.8.2</version>
-      <scope>test</scope>
-      <optional>true</optional>
-    </dependency>
   </dependencies>
 
   <scm>
-    <url>https://github.com/skorg/ppi4j</url>
+    <url>https://github.com/skorg/perl-utils</url>
+    <connection>scm:git://github.com/skorg/ppi4j.git</connection>
+    <developerConnection>scm:git@github.com:skorg/ppi4j.git</developerConnection>
   </scm>
-  
+
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/skorg/ppi4j/issues</url>
+  </issueManagement>
+
 </project>
