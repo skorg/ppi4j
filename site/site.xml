@@ -1,0 +1,13 @@
+<project>
+
+  <skin>
+    <groupId>org.scriptkitty</groupId>
+    <artifactId>skorg-maven-skin</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </skin>
+
+  <body>
+    <menu ref="reports" inherit="top" />
+  </body>
+
+</project>
