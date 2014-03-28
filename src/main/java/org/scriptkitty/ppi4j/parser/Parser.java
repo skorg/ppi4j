@@ -1,5 +1,11 @@
 package org.scriptkitty.ppi4j.parser;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+
 import org.scriptkitty.ppi4j.Document;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Node;
@@ -41,12 +47,6 @@ import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.token.quotelike.QLWordsToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 import org.scriptkitty.ppi4j.util.IErrorProxy;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.Stack;
 
 
 /**
@@ -138,11 +138,11 @@ public final class Parser
 
     //~ Instance fields
 
-    private Stack<Token> delayed = new Stack<Token>();
+    private IErrorProxy proxy;
 
     private ITokenProvider provider;
 
-    private IErrorProxy proxy;
+    private Stack<Token> delayed = new Stack<>();
 
     //~ Constructors
 
@@ -587,9 +587,9 @@ public final class Parser
                 else
                 {
                     /*
-                     * umatched closing brace - the user typed something wrong or just didn't include it - either way,
-                     * it's an error that needs to be handled gracefully. for now, treat it as implicitly ending the
-                     * structure - this will cause the least damage across the various reasons this could have occurred.
+                     * umatched closing brace - the user typed something wrong or just didn't include it - either way, it's an error that
+                     * needs to be handled gracefully. for now, treat it as implicitly ending the structure - this will cause the least
+                     * damage across the various reasons this could have occurred.
                      */
                     proxy.reportUnmatchedBrace(token);
 
@@ -632,8 +632,8 @@ public final class Parser
         else if (ElementUtils.isCloseBraceToken(token))
         {
             /*
-             * if the situation is encoutered, we are at the top of the tree. either a parsing error occurred or there
-             * is a mistake in the code
+             * if the situation is encoutered, we are at the top of the tree. either a parsing error occurred or there is a mistake in the
+             * code
              */
             Statement stmt = createStatement(UnmatchedBrace.class, token);
             addElement(document, stmt);
@@ -712,8 +712,8 @@ public final class Parser
         }
 
         /*
-         * according to PPI, unless we are at the start of the statement, everything else should be a block. it's also
-         * possibly a bad choice, but will have to do for now. :)
+         * according to PPI, unless we are at the start of the statement, everything else should be a block. it's also possibly a bad
+         * choice, but will have to do for now. :)
          */
         if (element != null)
         {
@@ -814,8 +814,7 @@ public final class Parser
     private Statement resolveStatement(Node parent, Token token) throws TokenizerException
     {
         // this might be 'parent' =>
-        if (((parent instanceof ListStructure) || (parent instanceof ConstructorStructure)) &&
-                (token instanceof WordToken))
+        if (((parent instanceof ListStructure) || (parent instanceof ConstructorStructure)) && (token instanceof WordToken))
         {
             Token next = nextToken();
             if (ElementUtils.isEqualArrowOperatorToken(next))
@@ -850,8 +849,8 @@ public final class Parser
         {
             clazz = resolveUse(token);
         }
-        else if ((parent instanceof WhenStructure) || (parent instanceof GivenStructure) ||
-                (parent instanceof ConditionStructure) || (parent instanceof ListStructure))
+        else if ((parent instanceof WhenStructure) || (parent instanceof GivenStructure) || (parent instanceof ConditionStructure) ||
+                (parent instanceof ListStructure))
         {
             clazz = ExpressionStatement.class;
         }
@@ -926,8 +925,7 @@ public final class Parser
         return clazz;
     }
 
-    private Class<? extends Statement> resolveSubScript(Class<? extends Statement> resolved, Token token)
-        throws TokenizerException
+    private Class<? extends Statement> resolveSubScript(Class<? extends Statement> resolved, Token token) throws TokenizerException
     {
         //J-
         /*
@@ -953,8 +951,7 @@ public final class Parser
         }
 
         /*
-         * more complex case, we might be 'my' or 'our' followed by a symbol. if the next token is a '}', then we're
-         * sothing like $h{foo}
+         * more complex case, we might be 'my' or 'our' followed by a symbol. if the next token is a '}', then we're sothing like $h{foo}
          */
         Class<? extends Statement> clazz = null;
         Token next = nextToken();

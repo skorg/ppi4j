@@ -1,16 +1,16 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.ArrayIndexToken;
 import org.scriptkitty.ppi4j.token.CastToken;
 import org.scriptkitty.ppi4j.token.MagicToken;
 import org.scriptkitty.ppi4j.token.OperatorToken;
 import org.scriptkitty.ppi4j.token.SymbolToken;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 final class MagicScanner extends TokenScanner

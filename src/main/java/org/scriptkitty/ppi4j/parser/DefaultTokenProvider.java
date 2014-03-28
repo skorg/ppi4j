@@ -1,10 +1,10 @@
 package org.scriptkitty.ppi4j.parser;
 
+import java.util.Stack;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizerException;
 import org.scriptkitty.ppi4j.tokenizer.Tokenizer;
-
-import java.util.Stack;
 
 
 public class DefaultTokenProvider implements ITokenProvider
@@ -19,7 +19,7 @@ public class DefaultTokenProvider implements ITokenProvider
 
     public DefaultTokenProvider(String source)
     {
-        this.rollback = new Stack<Token>();
+        this.rollback = new Stack<>();
         this.tokenizer = new Tokenizer(source);
     }
 

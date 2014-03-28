@@ -1,14 +1,14 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.OperatorToken;
 import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.token.number.VersionNumberToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**

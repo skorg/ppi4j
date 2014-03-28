@@ -2,7 +2,6 @@ package org.scriptkitty.ppi4j.token;
 
 import org.scriptkitty.perl.lang.General;
 import org.scriptkitty.perl.lang.Words;
-
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Statement;
 import org.scriptkitty.ppi4j.Token;
@@ -16,8 +15,7 @@ import org.scriptkitty.ppi4j.util.ElementUtils;
 /**
  * a <code>WordToken</code> represents all 'word' tokens.
  *
- * <p>in addition to barewords, all other valid words (core functions, those that include <code>::</code> separators)
- * are included here.</p>
+ * <p>in addition to barewords, all other valid words (core functions, those that include <code>::</code> separators) are included here.</p>
  *
  * <p>many of the boolean methods in this class were inspired by <code>Perl::Critic::Utils</code>.</p>
  *
@@ -31,8 +29,8 @@ public class WordToken extends Token
     /**
      * get the literal value of the token
      *
-     * <p>qualified names that use a <code>'</code> as a delimiter (deprecated) are expanded to <code>::</code>, ie:
-     * <code>Foo'Bar</code> becomes <code>Foo::Bar</code>.</p>
+     * <p>qualified names that use a <code>'</code> as a delimiter (deprecated) are expanded to <code>::</code>, ie: <code>Foo'Bar</code>
+     * becomes <code>Foo::Bar</code>.</p>
      *
      * @return literal value
      *
@@ -136,8 +134,8 @@ public class WordToken extends Token
     /**
      * does this token represent a class name?
      *
-     * <p>if the token that immediately follows this one is the deference operator, <code>-&gt;</code>, it usually means
-     * it is the name of a class.</p>
+     * <p>if the token that immediately follows this one is the deference operator, <code>-&gt;</code>, it usually means it is the name of a
+     * class.</p>
      *
      * @return <code>true</code> if class name, <code>false</code> otherwise
      */
@@ -209,8 +207,7 @@ public class WordToken extends Token
     /**
      * does this token represent a global file handle?
      *
-     * <p>note: if the file handle is represented as a typeglob (ie: <code>*STDIN</code>, this method will return <code>
-     * false</code>.</p>
+     * <p>note: if the file handle is represented as a typeglob (ie: <code>*STDIN</code>, this method will return <code>false</code>.</p>
      *
      * @return <code>true</code> if a file handle, <code>false</code> otherwise
      */
@@ -303,8 +300,7 @@ public class WordToken extends Token
     /**
      * does this token represent a method call?
      *
-     * <p>if this token immediately follows the deference operator, <code>-&lt;</code>, it usually means it is the name
-     * of a method.</p>
+     * <p>if this token immediately follows the deference operator, <code>-&lt;</code>, it usually means it is the name of a method.</p>
      *
      * @return <code>true</code> if a method call, <code>false</code> otherwise
      */

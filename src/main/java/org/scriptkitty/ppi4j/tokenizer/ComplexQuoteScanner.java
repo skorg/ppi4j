@@ -1,13 +1,13 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
-import org.scriptkitty.ppi4j.Element.Attribute;
-import org.scriptkitty.ppi4j.exception.TokenizingException;
-import org.scriptkitty.ppi4j.token.SectionedToken;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.scriptkitty.ppi4j.Element.Attribute;
+import org.scriptkitty.ppi4j.exception.TokenizingException;
+import org.scriptkitty.ppi4j.token.SectionedToken;
 
 
 /**
@@ -44,8 +44,8 @@ final class ComplexQuoteScanner extends SimpleQuoteScanner
         private static final long serialVersionUID = -5016370887124834087L;
 
         /*
-         * NOTE: '?' (which is kind of deprecated) is not currently supported - not sure of the context differences
-         * between it as a regexp operator and ternary operator
+         * NOTE: '?' (which is kind of deprecated) is not currently supported - not sure of the context differences between it as a regexp
+         * operator and ternary operator
          */
         {
             //J-
@@ -268,8 +268,7 @@ final class ComplexQuoteScanner extends SimpleQuoteScanner
     private boolean hasModifiers(String content)
     {
         // if we are any of these, we do not have a modifier
-        return (!("q".equals(content) || "qq".equals(content) || "qw".equals(content) || "qx".equals(content) ||
-                "<".equals(content)));
+        return (!("q".equals(content) || "qq".equals(content) || "qw".equals(content) || "qx".equals(content) || "<".equals(content)));
     }
 
     private boolean hasThreePart(String content)

@@ -15,8 +15,8 @@ public abstract class QuoteToken extends Token
     /**
      * get the value of the string as perl would see it.
      *
-     * <p>this method strips any quote marks from the string and resolves <code>\\</code> to <code>\</code> and <code>
-     * \'</code> to <code>'</code>.</p>
+     * <p>this method strips any quote marks from the string and resolves <code>\\</code> to <code>\</code> and <code>\'</code> to <code>
+     * '</code>.</p>
      *
      * @return literal value
      *
@@ -66,8 +66,8 @@ public abstract class QuoteToken extends Token
     /**
      * get the end index of the token's string value.
      *
-     * <p>ie, if the token is a <code>SingleQuote</code> token, the end index would be one to move behind the ending
-     * <code>'</code> character.</p>
+     * <p>ie, if the token is a <code>SingleQuote</code> token, the end index would be one to move behind the ending <code>'</code>
+     * character.</p>
      *
      * @return end index
      */
@@ -79,8 +79,8 @@ public abstract class QuoteToken extends Token
     /**
      * get the start index of the token's string value.
      *
-     * <p>ie, if the token is a <code>SingleQuote</code> token, the start index would be one to move past the starting
-     * <code>'</code> character.</p>
+     * <p>ie, if the token is a <code>SingleQuote</code> token, the start index would be one to move past the starting <code>'</code>
+     * character.</p>
      *
      * @return start index
      */

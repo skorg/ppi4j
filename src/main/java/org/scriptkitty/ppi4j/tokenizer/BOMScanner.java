@@ -13,8 +13,7 @@ final class BOMScanner extends TokenScanner
     //~ Methods
 
     /*
-     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineStart(org.scriptkitty.ppi4j.tokenizer.Tokenizer,
-     * java.lang.String)
+     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineStart(org.scriptkitty.ppi4j.tokenizer.Tokenizer, java.lang.String)
      */
     @Override protected boolean tokenizerOnLineStart(Tokenizer tokenizer, String line)
     {

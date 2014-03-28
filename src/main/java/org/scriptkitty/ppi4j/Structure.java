@@ -1,20 +1,20 @@
 package org.scriptkitty.ppi4j;
 
-import org.scriptkitty.ppi4j.token.StructureToken;
-import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.scriptkitty.ppi4j.token.StructureToken;
+import org.scriptkitty.ppi4j.visitor.INodeVisitor;
+
 
 /**
  * <code>Structure</code> is the root class for all perl bracing structures.
  *
- * <p>this covers all forms of <code>[ ... ]</code>, <code>{ ... }</code> and <code>( ... )</code> brace types, and
- * includes cases where only one half of the pair exists.</p>
+ * <p>this covers all forms of <code>[ ... ]</code>, <code>{ ... }</code> and <code>( ... )</code> brace types, and includes cases where
+ * only one half of the pair exists.</p>
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Structure.pm">CPAN - PPI::Structure</a>
  */
@@ -171,7 +171,7 @@ public class Structure extends Node
      */
     @Override public List<Element> getElements()
     {
-        List<Element> elements = new ArrayList<Element>(super.getElements());
+        List<Element> elements = new ArrayList<>(super.getElements());
         addStartFinish(elements);
 
         return Collections.unmodifiableList(elements);
@@ -180,8 +180,8 @@ public class Structure extends Node
     /**
      * get the token that represents the closing brace of the structure.
      *
-     * <p>it can be quite common for a structure to not have a closing brace, ie: when a user has not added the closing
-     * brace of a subroutine.</p>
+     * <p>it can be quite common for a structure to not have a closing brace, ie: when a user has not added the closing brace of a
+     * subroutine.</p>
      *
      * @return token or <code>null</code> if a closing brace has not been encountered
      */
@@ -229,8 +229,8 @@ public class Structure extends Node
     /**
      * get the token that represents the opening brace of the structure.
      *
-     * <p>under normal parsing circumstances, the structure should always have an opening brace but may occur if the
-     * document is manipulated.</p>
+     * <p>under normal parsing circumstances, the structure should always have an opening brace but may occur if the document is
+     * manipulated.</p>
      *
      * @return token or <code>null</code> if an opening brace has not been encountered
      */
@@ -244,7 +244,7 @@ public class Structure extends Node
      */
     @Override public List<Token> getTokens()
     {
-        List<Token> tokens = new ArrayList<Token>();
+        List<Token> tokens = new ArrayList<>();
 
         tokens.addAll(super.getTokens());
         addStartFinish(tokens);
@@ -293,8 +293,7 @@ public class Structure extends Node
      *
      * @param  match string to match
      *
-     * @return <code>true</code> if the string represents the closing brace for the structure, <code>false</code>
-     *         otherwise
+     * @return <code>true</code> if the string represents the closing brace for the structure, <code>false</code> otherwise
      */
     public boolean isStartOpposite(String match)
     {
@@ -319,9 +318,6 @@ public class Structure extends Node
         Element.parent.put(token, this);
     }
 
-    // TODO: add insertBefore
-    // TODO: add insertAfter
-
     /**
      * set the token that starts this structure
      *
@@ -334,6 +330,9 @@ public class Structure extends Node
         this.start = token;
         Element.parent.put(token, this);
     }
+
+    // TODO: add insertBefore
+    // TODO: add insertAfter
 
     /*
      * @see java.lang.Object#toString()

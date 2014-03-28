@@ -5,11 +5,9 @@ import org.scriptkitty.ppi4j.token.SectionedToken;
 
 
 /**
- * an <code>InterpolateQuoteToken</code> token represents the single interpolation quote-like operator
- * (<code>qq//</code>).
+ * an <code>InterpolateQuoteToken</code> token represents the single interpolation quote-like operator (<code>qq//</code>).
  *
- * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/Quote/Interpolate.pm">CPAN -
- *      PPI::Token::Quote::Interpolate</a>
+ * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/Quote/Interpolate.pm">CPAN - PPI::Token::Quote::Interpolate</a>
  */
 public class InterpolateQuoteToken extends QuoteToken implements SectionedToken
 {

@@ -1,14 +1,13 @@
 package org.scriptkitty.ppi4j.token;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.perl.lang.General;
 import org.scriptkitty.perl.lang.Symbols;
-
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Structure;
 import org.scriptkitty.ppi4j.Token;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**
@@ -76,8 +75,8 @@ public class SymbolToken extends Token
     /**
      * get the normalized, canonical version of the symbol
      *
-     * <p>this does not fully resolve the symbol, but instead removes syntax variations, ie: <code>
-     * $::foo'bar::baz</code> becomes <code>$main::foo::bar::baz</code>.</p>
+     * <p>this does not fully resolve the symbol, but instead removes syntax variations, ie: <code>$::foo'bar::baz</code> becomes <code>
+     * $main::foo::bar::baz</code>.</p>
      *
      * @return canonical version
      */
@@ -111,8 +110,8 @@ public class SymbolToken extends Token
     /**
      * get the actual symbol this token refers to.
      *
-     * <p>ie, a token of <code>$foo</code> may actually be referring to <code>@foo</code> if it is found in the form
-     * <code>$foo[0]</code>.</p>
+     * <p>ie, a token of <code>$foo</code> may actually be referring to <code>@foo</code> if it is found in the form <code>
+     * $foo[0]</code>.</p>
      *
      * @return the resolved symbol
      */

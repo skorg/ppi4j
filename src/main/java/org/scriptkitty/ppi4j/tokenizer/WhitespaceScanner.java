@@ -1,5 +1,12 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.ArrayIndexToken;
@@ -26,13 +33,6 @@ import org.scriptkitty.ppi4j.token.quotelike.QLRegExpToken;
 import org.scriptkitty.ppi4j.token.quotelike.QLWordsToken;
 import org.scriptkitty.ppi4j.token.regexp.REMatchToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 final class WhitespaceScanner extends TokenScanner
@@ -161,11 +161,10 @@ final class WhitespaceScanner extends TokenScanner
         if (isClassMap(c))
         {
             /*
-             * meh - PPI creates the token after '__TOKENIZER__on_char' completes (in Tokenizer::_process_next_char),
-             * but we need to do it here b/c there is no way to signal what type of token should be created.
+             * meh - PPI creates the token after '__TOKENIZER__on_char' completes (in Tokenizer::_process_next_char), but we need to do it
+             * here b/c there is no way to signal what type of token should be created.
              *
-             * upon further reflection, i guess i could have just set the class to create as state on the tokenizer, but
-             * meh...
+             * upon further reflection, i guess i could have just set the class to create as state on the tokenizer, but meh...
              */
             createClassToken(tokenizer, c);
             return false;
@@ -234,8 +233,7 @@ final class WhitespaceScanner extends TokenScanner
     }
 
     /*
-     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineEnd(org.scriptkitty.ppi4j.tokenizer.Tokenizer,
-     * java.lang.String)
+     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineEnd(org.scriptkitty.ppi4j.tokenizer.Tokenizer, java.lang.String)
      */
     @Override protected void tokenizerOnLineEnd(Tokenizer tokenizer, String line)
     {
@@ -243,8 +241,7 @@ final class WhitespaceScanner extends TokenScanner
     }
 
     /*
-     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineStart(org.scriptkitty.ppi4j.tokenizer.Tokenizer,
-     * java.lang.String)
+     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineStart(org.scriptkitty.ppi4j.tokenizer.Tokenizer, java.lang.String)
      */
     @Override protected boolean tokenizerOnLineStart(Tokenizer tokenizer, String line)
     {
@@ -281,9 +278,9 @@ final class WhitespaceScanner extends TokenScanner
         if (matcher.find())
         {
             /*
-             * currently PPI just sucks all the lines after the 'use' statement into an array, but does nothing w/ them
-             * after the fact. rather then doing that, we tell the tokenizer to force an EOF and abort processing. if
-             * PPI ever does something w/ these lines, we will too.
+             * currently PPI just sucks all the lines after the 'use' statement into an array, but does nothing w/ them after the fact.
+             * rather then doing that, we tell the tokenizer to force an EOF and abort processing. if PPI ever does something w/ these
+             * lines, we will too.
              */
             tokenizer.forceEOF();
         }
@@ -305,8 +302,8 @@ final class WhitespaceScanner extends TokenScanner
     private void handleDash(Tokenizer tokenizer)
     {
         /*
-         * PPI's implementation of this is a bit different b/c it's asking the tokenizer for an 'opcontext', but i can't
-         * find anywhere else that method call is used, so it is simplified here for now...
+         * PPI's implementation of this is a bit different b/c it's asking the tokenizer for an 'opcontext', but i can't find anywhere else
+         * that method call is used, so it is simplified here for now...
          */
         Token prev = tokenizer.getLastSignificantToken();
 
@@ -328,8 +325,8 @@ final class WhitespaceScanner extends TokenScanner
         Token prev = tokenizer.getLastSignificantToken();
 
         /*
-         * most times following an operator, we're a regexp...  ,  - arg in list  .. - 2nd condition in a flip flop  =~
-         * - bound regexp  !~ - bond regexp
+         * most times following an operator, we're a regexp...  ,  - arg in list  .. - 2nd condition in a flip flop  =~ - bound regexp  !~ -
+         * bond regexp
          */
         if ((prev instanceof OperatorToken))
         {
@@ -345,8 +342,7 @@ final class WhitespaceScanner extends TokenScanner
         }
 
         // after going into scope/brackets
-        if (ElementUtils.isOpenCurlyToken(prev) || ElementUtils.isOpenParenToken(prev) ||
-                ElementUtils.isSemiColonToken(prev))
+        if (ElementUtils.isOpenCurlyToken(prev) || ElementUtils.isOpenParenToken(prev) || ElementUtils.isSemiColonToken(prev))
         {
             tokenizer.createToken(REMatchToken.class);
             return;
@@ -368,8 +364,7 @@ final class WhitespaceScanner extends TokenScanner
         }
 
         /*
-         * check char after slash, there are some things that would be highly illogic to see if it's an operator, so we
-         * assume it's a regexp
+         * check char after slash, there are some things that would be highly illogic to see if it's an operator, so we assume it's a regexp
          */
         if (!tokenizer.isEndOfCurrentLine() && tokenizer.getNextCharacter().matches("(?:\\^|\\[|\\\\)"))
         {

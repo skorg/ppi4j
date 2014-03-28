@@ -1,5 +1,7 @@
 package org.scriptkitty.ppi4j.statements;
 
+import java.util.List;
+
 import org.hamcrest.core.IsInstanceOf;
 
 import org.junit.Assert;
@@ -13,8 +15,6 @@ import org.scriptkitty.ppi4j.structure.ConditionStructure;
 import org.scriptkitty.ppi4j.structure.ForLoopStructure;
 import org.scriptkitty.ppi4j.structure.ListStructure;
 import org.scriptkitty.ppi4j.util.TestCaseProvider;
-
-import java.util.List;
 
 
 public class TestCompoundStatement

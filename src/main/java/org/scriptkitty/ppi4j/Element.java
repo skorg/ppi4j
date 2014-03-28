@@ -1,14 +1,14 @@
 package org.scriptkitty.ppi4j;
 
+import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
+
 import org.scriptkitty.ppi4j.exception.EmptyNodeException;
 import org.scriptkitty.ppi4j.structure.ListStructure;
 import org.scriptkitty.ppi4j.structure.SubscriptStructure;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
 
 
 /**
@@ -21,7 +21,7 @@ public abstract class Element
     //~ Static fields/initializers
 
     // TODO: implement delete, prune, remove, etc
-    protected static final Map<Element, Element> parent = new WeakHashMap<Element, Element>();
+    protected static final Map<Element, Element> parent = new WeakHashMap<>();
 
     //~ Enums
 
@@ -46,11 +46,11 @@ public abstract class Element
     /**
      * get all child elements lexically within the node.
      *
-     * <p>in the case of <code>Structure<code>classes, the returned list will <b>not</b> include the brace tokens at
-     * either end of the structure.</code></code></p>
+     * <p>in the case of <code>Structure<code>classes, the returned list will <b>not</b> include the brace tokens at either end of the
+     * structure.</code></code></p>
      *
-     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element
-     * structure can not be changed.</p>
+     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element structure can not
+     * be changed.</p>
      *
      * @return child elements
      */
@@ -59,8 +59,8 @@ public abstract class Element
     /**
      * get the contents of the element as if it were a line of source code.
      *
-     * <p>note: because of the way heredoc is handled, any heredoc content is not included in the output of this method
-     * and you should not attempt to <code>eval</code> or execute the result.</p>
+     * <p>note: because of the way heredoc is handled, any heredoc content is not included in the output of this method and you should not
+     * attempt to <code>eval</code> or execute the result.</p>
      *
      * @return contents of element as if it were a line of code
      */
@@ -70,11 +70,11 @@ public abstract class Element
     /**
      * get all child elements structurally within the node.
      *
-     * <p>in the case of <code>Structure</code>classes, the returned list will include the brace tokens at either end of
-     * the structure (provided they are set).</p>
+     * <p>in the case of <code>Structure</code>classes, the returned list will include the brace tokens at either end of the structure
+     * (provided they are set).</p>
      *
-     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element
-     * structure can not be changed.</p>
+     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element structure can not
+     * be changed.</p>
      *
      * @return child elements
      */
@@ -90,8 +90,8 @@ public abstract class Element
     /**
      * get the first element structurally within a <code>Node</code> object.
      *
-     * <p>if this method is called against a <code>Token</code>, the same object will be returned. as with the <code>
-     * getElements()</code> method, this does include the brace tokens for <code>Structure</code> objects.</p>
+     * <p>if this method is called against a <code>Token</code>, the same object will be returned. as with the <code>getElements()</code>
+     * method, this does include the brace tokens for <code>Structure</code> objects.</p>
      *
      * @return first element or <code>null</code> if the node does not contain any elements
      *
@@ -102,8 +102,8 @@ public abstract class Element
     /**
      * get the last element structurally within a <code>Node</code> object.
      *
-     * <p>if this method is called against a <code>Token</code>, the same object will be returned. as with the <code>
-     * getElements()</code> method, this does include the brace tokens for <code>Structure</code> objects.</p>
+     * <p>if this method is called against a <code>Token</code>, the same object will be returned. as with the <code>getElements()</code>
+     * method, this does include the brace tokens for <code>Structure</code> objects.</p>
      *
      * @return last element or <code>null</code> if the node does not contain any elements
      *
@@ -114,11 +114,11 @@ public abstract class Element
     /**
      * get all 'significant' child elements lexically within the node.
      *
-     * <p>in the case of <code>Structure</code> classes, the returned list will <b>not</b> include the brace tokens at
-     * either end of the structure.</p>
+     * <p>in the case of <code>Structure</code> classes, the returned list will <b>not</b> include the brace tokens at either end of the
+     * structure.</p>
      *
-     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element
-     * structure can not be changed.</p>
+     * <p>the list returned will be wrapped by <code>Collections.unmodifiableList(List)</code> so the underlying element structure can not
+     * be changed.</p>
      *
      * @return 'significant' child elements
      *
@@ -145,9 +145,8 @@ public abstract class Element
     /**
      * is the element significant?
      *
-     * <p>this method allows for distinguishing between tokens that comprise the code and tokens that are not
-     * significant, such as whitespace, POD, or the portion of a file after (and including) the <code>__END__</code>
-     * token.</p>
+     * <p>this method allows for distinguishing between tokens that comprise the code and tokens that are not significant, such as
+     * whitespace, POD, or the portion of a file after (and including) the <code>__END__</code> token.</p>
      *
      * @return <code>true</code> if the element is significant, <code>false</code> otherwise.
      */
@@ -173,9 +172,8 @@ public abstract class Element
     /**
      * get the first <code>Token</code> object contained within this element.
      *
-     * <p>if this method is invoked against a <code>Node</code> subclass, it will descend into its children searching
-     * for the first <code>Token</code> object. if this method is invoked on a <code>Token</code> object, it will return
-     * the same object.</p>
+     * <p>if this method is invoked against a <code>Node</code> subclass, it will descend into its children searching for the first <code>
+     * Token</code> object. if this method is invoked on a <code>Token</code> object, it will return the same object.</p>
      *
      * @return first token
      *
@@ -205,9 +203,8 @@ public abstract class Element
     /**
      * get the last <code>Token</code> object contained within this element.
      *
-     * <p>if this method is invoked against a <code>Node</code> subclass, it will descend into its children searching
-     * for the last <code>Token</code> object. if this method is invoked on a <code>Token</code> object, it will return
-     * the same object.</p>
+     * <p>if this method is invoked against a <code>Node</code> subclass, it will descend into its children searching for the last <code>
+     * Token</code> object. if this method is invoked on a <code>Token</code> object, it will return the same object.</p>
      *
      * @return last token
      *
@@ -252,8 +249,7 @@ public abstract class Element
     /**
      * get the next 'significant' element immediately following this one.
      *
-     * @return the 'significant' element immediately following this one or <code>null</code> if there is no next
-     *         sibling.
+     * @return the 'significant' element immediately following this one or <code>null</code> if there is no next sibling.
      *
      * @see    #isSignificant()
      */
@@ -268,8 +264,8 @@ public abstract class Element
     }
 
     /**
-     * get the <code>Token <code>that is immediately after the current element, even if it is not within the same parent
-     * node as this one.</code></code>
+     * get the <code>Token <code>that is immediately after the current element, even if it is not within the same parent node as this
+     * one.</code></code>
      *
      * @return the next token or <code>null</code> if there are no more tokens after the element
      *
@@ -350,8 +346,7 @@ public abstract class Element
     /**
      * get the previous 'significant' element immediately following this one.
      *
-     * @return the 'significant' element previously following this one or <code>null</code> if there is no previous
-     *         sibling.
+     * @return the 'significant' element previously following this one or <code>null</code> if there is no previous sibling.
      *
      * @see    #isSignificant()
      */
@@ -366,8 +361,8 @@ public abstract class Element
     }
 
     /**
-     * get the <code>Token <code>that is immediately before the current element, even if it is not within the same
-     * parent node as this one.</code></code>
+     * get the <code>Token <code>that is immediately before the current element, even if it is not within the same parent node as this
+     * one.</code></code>
      *
      * @return the previous token or <code>null</code> if there are no more tokens before the element
      *
@@ -417,8 +412,8 @@ public abstract class Element
     /**
      * get the top level node in the document tree.
      *
-     * <p>most of the time, this should be a <code>Document</code> object but could be same object if the element has
-     * been removed from the document.</p>
+     * <p>most of the time, this should be a <code>Document</code> object but could be same object if the element has been removed from the
+     * document.</p>
      *
      * @return the top most element, which may the the same instance as the calling object
      */

@@ -1,16 +1,15 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
-import org.scriptkitty.perl.lang.HereDoc;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
+import org.scriptkitty.perl.lang.HereDoc;
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.HereDocToken;
 import org.scriptkitty.ppi4j.token.HereDocToken.Mode;
 import org.scriptkitty.ppi4j.token.OperatorToken;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 
 
 /**
@@ -32,11 +31,10 @@ final class HereDocScanner extends TokenScanner
          *
          * from perlop:
          *
-         * The terminating string may be either an identifier (a word), or some quoted text. An unquoted identifier works
-         * like double quotes. There may not be a space between the << and the identifier, unless the identifier is
-         * explicitly quoted. (If you put a space it will be treated as a null identifier, which is valid, and matches
-         * the first empty line.) The terminating string must appear by itself (unquoted and with no surrounding
-         * whitespace) on the terminating line.
+         * The terminating string may be either an identifier (a word), or some quoted text. An unquoted identifier works like double quotes.
+         * There may not be a space between the << and the identifier, unless the identifier is explicitly quoted. (If you put a space it
+         * will be treated as a null identifier, which is valid, and matches the first empty line.) The terminating string must appear by
+         * itself (unquoted and with no surrounding whitespace) on the terminating line.
          *
          */
         String rest = tokenizer.getRestOfCurrentLine();
@@ -63,7 +61,7 @@ final class HereDocScanner extends TokenScanner
         int offset = tokenizer.getOffset() + rest.length() + token.getLength() - content.length();
 
         String line = tokenizer.nextLine();
-        List<String> heredoc = new ArrayList<String>();
+        List<String> heredoc = new ArrayList<>();
 
         while (!"".equals(line))
         {

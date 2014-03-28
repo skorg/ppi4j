@@ -1,15 +1,15 @@
 package org.scriptkitty.ppi4j;
 
-import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.scriptkitty.ppi4j.visitor.INodeVisitor;
+
 
 /**
- * a <code>Token</code> represents is the abstract base class for all tokens. in ppi4j terms, a 'token' is a <code>
- * Element</code> that directly represents bits of source code.
+ * a <code>Token</code> represents is the abstract base class for all tokens. in ppi4j terms, a 'token' is a <code>Element</code> that
+ * directly represents bits of source code.
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token.pm">CPAN - PPI::Token</a>
  */
@@ -18,12 +18,10 @@ public abstract class Token extends Element
     //~ Static fields/initializers
 
     /**
-     * represents <code>null</code> as a <code>Token</code> object - this token will never appear in a <code>
-     * Document</code> but can be passed to/returned from a method that uses a <code>Token</code> instead of <code>
-     * null</code> when the required token does not exist.
+     * represents <code>null</code> as a <code>Token</code> object - this token will never appear in a <code>Document</code> but can be
+     * passed to/returned from a method that uses a <code>Token</code> instead of <code>null</code> when the required token does not exist.
      *
-     * <p>all methods will return an apporiate 'null' value so callers may deal with the object as they would any other
-     * token.</p>
+     * <p>all methods will return an apporiate 'null' value so callers may deal with the object as they would any other token.</p>
      */
     public static final Token NULL = new Token(false, true)
     {
@@ -33,8 +31,8 @@ public abstract class Token extends Element
     };
 
     /**
-     * represents <code>EOF</code> as a <code>Token</code> - this token will only be seen by a caller if they are
-     * working with tokens via the <code>Tokenizer</code>.
+     * represents <code>EOF</code> as a <code>Token</code> - this token will only be seen by a caller if they are working with tokens via
+     * the <code>Tokenizer</code>.
      */
     public static final Token EOF = new Token(true, false)
     {
@@ -45,16 +43,16 @@ public abstract class Token extends Element
 
     //~ Instance fields
 
-    private int column;
-
-    private StringBuffer content;
-
     private boolean empty;
     private boolean eof;
+
+    private int column;
 
     private int lineNumber;
 
     private int start;
+
+    private StringBuffer content;
 
     //~ Constructors
 
@@ -198,7 +196,7 @@ public abstract class Token extends Element
      */
     @Override public final List<Token> getTokens()
     {
-        List<Token> list = new ArrayList<Token>();
+        List<Token> list = new ArrayList<>();
         list.add(this);
 
         return list;

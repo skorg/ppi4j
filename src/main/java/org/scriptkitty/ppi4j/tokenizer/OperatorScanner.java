@@ -1,14 +1,14 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
-import org.scriptkitty.ppi4j.exception.TokenizingException;
-import org.scriptkitty.ppi4j.token.HereDocToken;
-import org.scriptkitty.ppi4j.token.number.FloatNumberToken;
-import org.scriptkitty.ppi4j.token.quotelike.QLReadlineToken;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.scriptkitty.ppi4j.exception.TokenizingException;
+import org.scriptkitty.ppi4j.token.HereDocToken;
+import org.scriptkitty.ppi4j.token.number.FloatNumberToken;
+import org.scriptkitty.ppi4j.token.quotelike.QLReadlineToken;
 
 
 /**

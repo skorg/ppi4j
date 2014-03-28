@@ -1,13 +1,13 @@
 package org.scriptkitty.ppi4j;
 
+import java.util.List;
+
 import org.scriptkitty.ppi4j.finder.SimpleRule;
 import org.scriptkitty.ppi4j.statement.CompoundStatement;
 import org.scriptkitty.ppi4j.statement.GivenStatement;
 import org.scriptkitty.ppi4j.statement.WhenStatement;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
-import java.util.List;
 
 
 public class Statement extends Node
@@ -107,8 +107,7 @@ public class Statement extends Node
     /**
      * get the syntatic type of the statement.
      *
-     * <p>the default implementation returns a type of <code>NONE</code>, however sub-classes may return something
-     * different.</p>
+     * <p>the default implementation returns a type of <code>NONE</code>, however sub-classes may return something different.</p>
      *
      * @return statement type
      */
@@ -127,8 +126,7 @@ public class Statement extends Node
      */
     public boolean isNormal()
     {
-        if ((changeTo == CompoundStatement.class) || (changeTo == WhenStatement.class) ||
-                (changeTo == GivenStatement.class))
+        if ((changeTo == CompoundStatement.class) || (changeTo == WhenStatement.class) || (changeTo == GivenStatement.class))
         {
             return false;
         }
@@ -137,8 +135,7 @@ public class Statement extends Node
     }
 
     /**
-     * returns <code>true</code> if the statement represents the <code>true</code> value that must be returned at the
-     * end of a perl module.
+     * returns <code>true</code> if the statement represents the <code>true</code> value that must be returned at the end of a perl module.
      */
     public final boolean isTerminator()
     {

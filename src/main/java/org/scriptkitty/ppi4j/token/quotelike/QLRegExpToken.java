@@ -1,21 +1,20 @@
 package org.scriptkitty.ppi4j.token.quotelike;
 
-import org.scriptkitty.ppi4j.token.QuoteLikeToken;
-
 import java.util.List;
+
+import org.scriptkitty.ppi4j.token.QuoteLikeToken;
 
 
 /**
- * a <code>QLRegExpToken</code> token represents the quote-like operator (<code>qr//</code>)used to construct anonymous
- * regular expression objects.
+ * a <code>QLRegExpToken</code> token represents the quote-like operator (<code>qr//</code>)used to construct anonymous regular expression
+ * objects.
  *
  * <pre>
  *   # create a regexp object for a module filename
  *   my $module = qr/\.pm$/;
  * </pre>
  *
- * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/QuoteLike/RegExp.pm">CPAN -
- *      PPI::Token::QuoteLike::RegExp</a>
+ * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/QuoteLike/RegExp.pm">CPAN - PPI::Token::QuoteLike::RegExp</a>
  */
 public final class QLRegExpToken extends QuoteLikeToken
 {
@@ -34,8 +33,8 @@ public final class QLRegExpToken extends QuoteLikeToken
     /**
      * get the portion of the regular expression that represents the match string
      *
-     * <p>if the expression does not have a match string or if the expression is incomplete (missing the closing
-     * delimiter), <code>null</code> will be returned.</p>
+     * <p>if the expression does not have a match string or if the expression is incomplete (missing the closing delimiter), <code>
+     * null</code> will be returned.</p>
      *
      * @return match string or <code>null</code> if it does not exist
      *
@@ -55,8 +54,8 @@ public final class QLRegExpToken extends QuoteLikeToken
     /**
      * get the list of modifiers assigned to this regular expression
      *
-     * <p><b>note</b>: the tokenizer does not distinguish between what is a valid modifier and what is not. it is up to
-     * the calling user to validate the list of values returned.</p>
+     * <p><b>note</b>: the tokenizer does not distinguish between what is a valid modifier and what is not. it is up to the calling user to
+     * validate the list of values returned.</p>
      *
      * @return modifier list
      */

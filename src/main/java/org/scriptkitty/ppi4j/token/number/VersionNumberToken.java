@@ -15,8 +15,8 @@ import org.scriptkitty.ppi4j.token.NumberToken;
  *   <li><code>v1.2.3.4</code></li>
  * </ul>
  *
- * <p><b>note</b>: {@link #toNumber()} is not supported for this token type and will throw an explict <code>
- * NumberFormatException</code> if called.</p>
+ * <p><b>note</b>: {@link #toNumber()} is not supported for this token type and will throw an explict <code>NumberFormatException</code> if
+ * called.</p>
  */
 public class VersionNumberToken extends NumberToken
 {

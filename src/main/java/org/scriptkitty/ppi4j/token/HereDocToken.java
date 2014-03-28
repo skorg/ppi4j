@@ -1,9 +1,9 @@
 package org.scriptkitty.ppi4j.token;
 
-import org.scriptkitty.ppi4j.Token;
-
 import java.util.Collections;
 import java.util.List;
+
+import org.scriptkitty.ppi4j.Token;
 
 
 /**
@@ -24,6 +24,8 @@ public final class HereDocToken extends Token
 
     private int hdOffset = 0;
 
+    private int tOffset = 0;
+
     private List<String> heredoc;
 
     private Mode mode;
@@ -32,15 +34,13 @@ public final class HereDocToken extends Token
 
     private String tLine;
 
-    private int tOffset = 0;
-
     //~ Methods
 
     /**
      * {@inheritDoc}
      *
-     * <p><b>IMPORTANT</b>:even though <code>HereDocToken</code>s do not include the 'heredoc' and 'terminator' as part
-     * of their content, the end offset calculation does.</p>
+     * <p><b>IMPORTANT</b>:even though <code>HereDocToken</code>s do not include the 'heredoc' and 'terminator' as part of their content,
+     * the end offset calculation does.</p>
      *
      * @see #getContent()
      */

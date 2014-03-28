@@ -11,8 +11,7 @@ import org.scriptkitty.ppi4j.visitor.AbstractNodeVisitor;
 
 
 /**
- * an implementation of <code>INodeVisitor</code> that prints the contents of a {@link org.scriptkitty.ppi4j.Document}
- * to the console/tty.
+ * an implementation of <code>INodeVisitor</code> that prints the contents of a {@link org.scriptkitty.ppi4j.Document} to the console/tty.
  */
 public class DocumentPrinter extends AbstractNodeVisitor
 {

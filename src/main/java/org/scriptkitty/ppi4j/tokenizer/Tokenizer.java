@@ -1,14 +1,14 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizerException;
 import org.scriptkitty.ppi4j.token.BOMToken;
 import org.scriptkitty.ppi4j.token.HereDocToken;
 import org.scriptkitty.ppi4j.token.WhitespaceToken;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 
 
 public final class Tokenizer
@@ -17,28 +17,28 @@ public final class Tokenizer
 
     private boolean chopEOF = true;
 
-    private Token current;
-
-    private String currentLine;
-    private int currentLineCol;
-
-    private TokenScanner delegate;
-
     private boolean forceEOF;
+
+    private char[] source;
+    private int currentLineCol;
 
     private int hdOffset = 0;
     private int lineNumber = 0;
 
     private int offset;
-    private final Pattern SEPARATOR = Pattern.compile("^__(?:DATA|END)__\\s*$");
 
     private int sIndex;
-
-    private char[] source;
     private int tIndex;
 
     private List<Token> tokens;
+    private final Pattern SEPARATOR = Pattern.compile("^__(?:DATA|END)__\\s*$");
     private final Pattern TRAILING_WS = Pattern.compile("\\s$");
+
+    private String currentLine;
+
+    private Token current;
+
+    private TokenScanner delegate;
 
     private TokenScanner zone;
 
@@ -46,7 +46,7 @@ public final class Tokenizer
 
     public Tokenizer(String source)
     {
-        this.tokens = new ArrayList<Token>();
+        this.tokens = new ArrayList<>();
         this.source = prepSource(source);
 
         switchToZone(WhitespaceToken.class);
@@ -159,8 +159,8 @@ public final class Tokenizer
         current.setStartOffset(offset);
 
         /*
-         * once the token is finalized, subtract the content length to find the it's starting column position - if it's
-         * < 0, it's 0, the column start
+         * once the token is finalized, subtract the content length to find the it's starting column position - if it's < 0, it's 0, the
+         * column start
          */
         int column = currentLineCol - current.getLength();
         current.setColumn(((column < 0) ? 0 : column) + 1);
@@ -233,7 +233,7 @@ public final class Tokenizer
     protected Token[] getLastSignificantTokens(int count)
     {
         int index = tokens.size();
-        List<Token> list = new ArrayList<Token>(count);
+        List<Token> list = new ArrayList<>(count);
 
         while (index > 0)
         {
@@ -393,9 +393,9 @@ public final class Tokenizer
     protected void switchToToken(Class<? extends Token> clazz, String content)
     {
         /*
-         * meh - i don't really like how this is going to cause some object churn, but b/c the tokens can change right
-         * up to the point of being finalized. perl can cheat and just rebless the class to have it change type - we
-         * need to create create a new instance entirely
+         * meh - i don't really like how this is going to cause some object churn, but b/c the tokens can change right up to the point of
+         * being finalized. perl can cheat and just rebless the class to have it change type - we need to create create a new instance
+         * entirely
          */
         createToken(clazz, content, false);
     }
@@ -566,9 +566,9 @@ public final class Tokenizer
                     throw new RuntimeException("processNextChar() : current == null");
                 }
                 /*
-                 * PPI can return the name of the token it needs to create (in addtion to 1/0/undef) in the event the
-                 * current token is not defined, however we can't (well, i'm not creating a value object for it), so it
-                 * will be the responsibility of the scanning delegate to create it for us.
+                 * PPI can return the name of the token it needs to create (in addtion to 1/0/undef) in the event the current token is not
+                 * defined, however we can't (well, i'm not creating a value object for it), so it will be the responsibility of the
+                 * scanning delegate to create it for us.
                  */
                 current.appendContent(getNextCharacter());
             }

@@ -1,18 +1,17 @@
 package org.scriptkitty.ppi4j.token;
 
 import org.scriptkitty.perl.lang.Symbols;
-
 import org.scriptkitty.ppi4j.Token;
 
 
 /**
  * a <code>CastToken</code> represents a prefix which forces a value into a different context.
  *
- * <p>a 'cast' in ppi4j terms is one or more characters used as a prefix which forces a value into a different class or
- * content. this includes referencing, dereferencing, and a few other minor cases.</p>
+ * <p>a 'cast' in ppi4j terms is one or more characters used as a prefix which forces a value into a different class or content. this
+ * includes referencing, dereferencing, and a few other minor cases.</p>
  *
- * <p>for expressions such as <code>@$foo</code> or <code>@{ $foo{bar} }</code>, the <code>@</code> in both cases
- * represents a cast, in this case, an array dereference.</p>
+ * <p>for expressions such as <code>@$foo</code> or <code>@{ $foo{bar} }</code>, the <code>@</code> in both cases represents a cast, in this
+ * case, an array dereference.</p>
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/Cast.pm">CPAN - PPI::Token::Cast</a>
  */

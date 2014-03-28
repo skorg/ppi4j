@@ -1,5 +1,10 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.ArrayIndexToken;
 import org.scriptkitty.ppi4j.token.AttributeToken;
@@ -37,11 +42,6 @@ import org.scriptkitty.ppi4j.token.quotelike.QLWordsToken;
 import org.scriptkitty.ppi4j.token.regexp.REMatchToken;
 import org.scriptkitty.ppi4j.token.regexp.RESubstituteToken;
 import org.scriptkitty.ppi4j.token.regexp.RETransliterateToken;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 abstract class TokenScanner
@@ -98,8 +98,7 @@ abstract class TokenScanner
 
     //~ Methods
 
-    protected final boolean scanFor(Tokenizer tokenizer, StringBuffer buffer, Pattern pattern, boolean rewind,
-        Depth calc)
+    protected final boolean scanFor(Tokenizer tokenizer, StringBuffer buffer, Pattern pattern, boolean rewind, Depth calc)
     {
         int depth = calc.initial();
 
@@ -149,11 +148,11 @@ abstract class TokenScanner
         if (!matcher.group(1).equals("cut"))
         {
             /*
-             * PPI claims this is an error (and correctly so, '=cut' should not start a section of pod) and we should
-             * not switch the scanner to 'pod' mode, however creating the pod token does just that.
+             * PPI claims this is an error (and correctly so, '=cut' should not start a section of pod) and we should not switch the scanner
+             * to 'pod' mode, however creating the pod token does just that.
              *
-             * while the code seems to function the same w/o this 'if' block, this may catches some edge case i am not
-             * aware of, hence it still being here. :)
+             * while the code seems to function the same w/o this 'if' block, this may catches some edge case i am not aware of, hence it
+             * still being here. :)
              */
             tokenizer.switchToScanner(PodToken.class);
         }
@@ -166,7 +165,7 @@ abstract class TokenScanner
     }
 
     /**
-     * @returns <code>true</true> if the class has consumed the character, <code>false</code> otherwise
+     * @return <code>true</true> if the class has consumed the character, <code>false</code> otherwise
      */
     @SuppressWarnings("unused")
     protected boolean tokenizerOnChar(Tokenizer tokenizer) throws TokenizingException
@@ -180,7 +179,7 @@ abstract class TokenScanner
     }
 
     /**
-     * @returns <code>true</true> if the class has consumed the line, <code>false</code> otherwise
+     * @return <code>true</true> if the class has consumed the line, <code>false</code> otherwise
      */
     protected boolean tokenizerOnLineStart(Tokenizer tokenizer, String line)
     {

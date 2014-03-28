@@ -1,13 +1,13 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.NumberToken;
 import org.scriptkitty.ppi4j.token.OperatorToken;
 import org.scriptkitty.ppi4j.token.WordToken;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**
@@ -62,8 +62,8 @@ final class ExpNumberScanner extends TokenScanner
             }
 
             /*
-             * PPI indicates there is an illegal character in the exponent, but it is not consumed so i am not sure why
-             * this indicator gets set
+             * PPI indicates there is an illegal character in the exponent, but it is not consumed so i am not sure why this indicator gets
+             * set
              */
             tokenizer.getCurrentToken().setAttribute(Token.Attribute.INVALID);
         }

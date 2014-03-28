@@ -1,10 +1,10 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
-import org.scriptkitty.ppi4j.exception.TokenizingException;
-import org.scriptkitty.ppi4j.token.MagicToken;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.scriptkitty.ppi4j.exception.TokenizingException;
+import org.scriptkitty.ppi4j.token.MagicToken;
 
 
 final class SymbolScanner extends TokenScanner

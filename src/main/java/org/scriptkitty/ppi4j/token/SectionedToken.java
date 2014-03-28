@@ -32,9 +32,9 @@ public interface SectionedToken
     {
         // TODO: provide methods to get delimiters
 
-        private List<String> modifiers = new ArrayList<String>();
+        private List<String> modifiers = new ArrayList<>();
 
-        private List<Section> sections = new ArrayList<Section>();
+        private List<Section> sections = new ArrayList<>();
 
         @Override public void addModifier(String modifier)
         {

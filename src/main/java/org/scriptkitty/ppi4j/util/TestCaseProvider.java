@@ -1,13 +1,5 @@
 package org.scriptkitty.ppi4j.util;
 
-import org.scriptkitty.ppi4j.Document;
-import org.scriptkitty.ppi4j.Token;
-import org.scriptkitty.ppi4j.exception.TokenizerException;
-import org.scriptkitty.ppi4j.parser.DefaultTokenProvider;
-import org.scriptkitty.ppi4j.parser.Parser;
-import org.scriptkitty.ppi4j.parser.ParserFactory;
-import org.scriptkitty.ppi4j.tokenizer.Tokenizer;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +8,14 @@ import java.io.InputStreamReader;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.scriptkitty.ppi4j.Document;
+import org.scriptkitty.ppi4j.Token;
+import org.scriptkitty.ppi4j.exception.TokenizerException;
+import org.scriptkitty.ppi4j.parser.DefaultTokenProvider;
+import org.scriptkitty.ppi4j.parser.Parser;
+import org.scriptkitty.ppi4j.parser.ParserFactory;
+import org.scriptkitty.ppi4j.tokenizer.Tokenizer;
 
 
 /**
@@ -72,7 +72,7 @@ public class TestCaseProvider
 
     public static Token[] getTokens(String snippet)
     {
-        List<Token> tokens = new ArrayList<Token>();
+        List<Token> tokens = new ArrayList<>();
         Tokenizer tokenizer = new Tokenizer(snippet);
 
         try

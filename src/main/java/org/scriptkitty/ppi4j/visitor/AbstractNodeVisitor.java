@@ -1,5 +1,7 @@
 package org.scriptkitty.ppi4j.visitor;
 
+import java.util.List;
+
 import org.scriptkitty.ppi4j.Document;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Node;
@@ -29,8 +31,6 @@ import org.scriptkitty.ppi4j.structure.GivenStructure;
 import org.scriptkitty.ppi4j.structure.ListStructure;
 import org.scriptkitty.ppi4j.structure.SubscriptStructure;
 import org.scriptkitty.ppi4j.structure.WhenStructure;
-
-import java.util.List;
 
 
 public abstract class AbstractNodeVisitor implements INodeVisitor

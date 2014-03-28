@@ -1,18 +1,18 @@
 package org.scriptkitty.ppi4j;
 
-import org.scriptkitty.ppi4j.finder.Rule;
-import org.scriptkitty.ppi4j.token.HereDocToken;
-import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.scriptkitty.ppi4j.finder.Rule;
+import org.scriptkitty.ppi4j.token.HereDocToken;
+import org.scriptkitty.ppi4j.visitor.INodeVisitor;
+
 
 /**
- * <code>Node</code> is the base class for all <code>Element <code>objects that are able to contain <code>
- * Document</code>, <code>Statement</code>, and <code>Structure</code> objects.</code></code>
+ * <code>Node</code> is the base class for all <code>Element <code>objects that are able to contain <code>Document</code>, <code>
+ * Statement</code>, and <code>Structure</code> objects.</code></code>
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Node.pm">CPAN - PPI::Node</a>
  */
@@ -20,11 +20,11 @@ public abstract class Node extends Element
 {
     //~ Instance fields
 
-    /** list of all the node's child elements */
-    private List<Element> children;
-
     /** indicates if the node contains a <code>HereDocToken</code> child element */
     private boolean containsHereDoc;
+
+    /** list of all the node's child elements */
+    private List<Element> children;
 
     /** list of all the node's significant child elements */
     private List<Element> significant;
@@ -34,8 +34,8 @@ public abstract class Node extends Element
     protected Node()
     {
         // easier to handle significant children this way
-        children = new ArrayList<Element>();
-        significant = new ArrayList<Element>();
+        children = new ArrayList<>();
+        significant = new ArrayList<>();
     }
 
     //~ Methods
@@ -73,8 +73,8 @@ public abstract class Node extends Element
     /**
      * is the specified element contained logically 'within' a node.
      *
-     * <p><code>Structure</code> objects are a special case where thebrace tokens at either side are generally
-     * considered to be 'within' the structure object, even if they are not actually in the structure's elements.</p>
+     * <p><code>Structure</code> objects are a special case where thebrace tokens at either side are generally considered to be 'within' the
+     * structure object, even if they are not actually in the structure's elements.</p>
      *
      * @param  element element
      *
@@ -96,8 +96,8 @@ public abstract class Node extends Element
     /**
      * find all elements in node that match the specified class.
      *
-     * <p>note: if the specified class is subclassed, this method will find those instances as well. this method will
-     * also recurse into the child elements of each node it encounters.</p>
+     * <p>note: if the specified class is subclassed, this method will find those instances as well. this method will also recurse into the
+     * child elements of each node it encounters.</p>
      *
      * @param  want element class
      *
@@ -120,8 +120,8 @@ public abstract class Node extends Element
      */
     public final <T extends Element> List<T> find(Rule rule)
     {
-        ArrayList<T> found = new ArrayList<T>();
-        LinkedList<Element> queue = new LinkedList<Element>(children);
+        ArrayList<T> found = new ArrayList<>();
+        LinkedList<Element> queue = new LinkedList<>(children);
 
         while (!queue.isEmpty())
         {
@@ -195,8 +195,7 @@ public abstract class Node extends Element
      * @see    #find(Class, boolean)
      * @see    #find(Class, boolean)
      */
-    public final <T extends Element> List<T> find(final Class<? extends Element> want, final boolean incSub,
-        final boolean recurse)
+    public final <T extends Element> List<T> find(final Class<? extends Element> want, final boolean incSub, final boolean recurse)
     {
         return find(new Rule()
             {
@@ -225,8 +224,8 @@ public abstract class Node extends Element
     /**
      * access a child element in the node.
      *
-     * <p>elements returned from this method will include those that are not 'significant'. specifying a negative index
-     * will retrieve children from the end of the list.</p>
+     * <p>elements returned from this method will include those that are not 'significant'. specifying a negative index will retrieve
+     * children from the end of the list.</p>
      *
      * @param  index element position
      *
@@ -400,7 +399,7 @@ public abstract class Node extends Element
      */
     @Override public List<Token> getTokens()
     {
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        ArrayList<Token> tokens = new ArrayList<>();
 
         for (Element element : children)
         {

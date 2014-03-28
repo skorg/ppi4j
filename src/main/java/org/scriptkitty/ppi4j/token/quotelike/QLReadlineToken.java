@@ -17,8 +17,7 @@ import org.scriptkitty.ppi4j.token.QuoteLikeToken;
  *   @lines = <FILE>;
  * </pre>
  *
- * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/QuoteLike/ReadLine.pm">CPAN -
- *      PPI::Token::QuoteLike::ReadLine</a>
+ * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/QuoteLike/ReadLine.pm">CPAN - PPI::Token::QuoteLike::ReadLine</a>
  */
 public final class QLReadlineToken extends QuoteLikeToken
 {

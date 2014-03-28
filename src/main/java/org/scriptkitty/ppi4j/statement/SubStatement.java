@@ -7,10 +7,10 @@ import org.scriptkitty.ppi4j.visitor.INodeVisitor;
 
 
 /**
- * <code>SubStatement</code>s are used to describe subroutine statements, as described in <a
- * href="http://perldoc.perl.org/perlsub.html">perlsub</a>.
+ * <code>SubStatement</code>s are used to describe subroutine statements, as described in <a href="http://perldoc.perl.org/perlsub.html">
+ * perlsub</a>.
  *
- * <p>please note, the following are defined as {@linkScheduledStatement}s:</p>
+ * <p>please note, the following are defined as {@link ScheduledStatement}s:</p>
  *
  * <ul>
  *   <li><code>BEGIN</code></li>
@@ -66,9 +66,8 @@ public class SubStatement extends StatementWithBody
     /**
      * convenience method to check if this is a special reserved subroutine.
      *
-     * <p>note: this does not check against any special list of subroutine names. instead, it returns <code>true</code>
-     * if the name is all in uppercase, as defined in <a href="http://perldoc.perl.org/perlsub.html">perlsub</a>, with
-     * the exception of:</p>
+     * <p>note: this does not check against any special list of subroutine names. instead, it returns <code>true</code> if the name is all
+     * in uppercase, as defined in <a href="http://perldoc.perl.org/perlsub.html">perlsub</a>, with the exception of:</p>
      *
      * <ul>
      *   <li><code>BEGIN</code></li>
@@ -78,7 +77,7 @@ public class SubStatement extends StatementWithBody
      *   <li><code>END</code></li>
      * </ul>
      *
-     * <p>which are defined as {@linkScheduledStatement}s.</p>
+     * <p>which are defined as {@link ScheduledStatement}s.</p>
      *
      * @return <code>true</code> if the name represents a reserved subroutine name, <code>false</code> otherwise.
      */

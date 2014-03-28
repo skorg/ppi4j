@@ -80,8 +80,8 @@ public abstract class QuoteLikeToken extends Token implements SectionedToken
     /**
      * get the end index of the token's string value.
      *
-     * <p>ie, if the token is a <code>QLBacktickToken</code> token, the end index would be one to move behind the ending
-     * <code>`</code> character.</p>
+     * <p>ie, if the token is a <code>QLBacktickToken</code> token, the end index would be one to move behind the ending <code>`</code>
+     * character.</p>
      *
      * @return end index
      */
@@ -93,8 +93,8 @@ public abstract class QuoteLikeToken extends Token implements SectionedToken
     /**
      * get the start index of the token's string value.
      *
-     * <p>ie, if the token is a <code>QLBacktickToken</code> token, the start index would be one to move past the
-     * starting <code>`</code> character.</p>
+     * <p>ie, if the token is a <code>QLBacktickToken</code> token, the start index would be one to move past the starting <code>`</code>
+     * character.</p>
      *
      * @return start index
      */

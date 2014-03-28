@@ -1,5 +1,7 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.List;
+
 import org.hamcrest.core.IsInstanceOf;
 
 import org.junit.Assert;
@@ -13,8 +15,6 @@ import org.scriptkitty.ppi4j.token.StructureToken;
 import org.scriptkitty.ppi4j.token.WhitespaceToken;
 import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.util.TestCaseProvider;
-
-import java.util.List;
 
 
 public class TestAttributeTokens

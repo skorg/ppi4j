@@ -1,7 +1,6 @@
 package org.scriptkitty.ppi4j.token;
 
 import org.scriptkitty.perl.lang.Structures;
-
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Structure;
 import org.scriptkitty.ppi4j.Token;
@@ -23,8 +22,8 @@ import org.scriptkitty.ppi4j.exception.EmptyNodeException;
  *   <li><code>;</code></li>
  * </ul>
  *
- * <p>a note on sibilings of <code>StructureToken</code>s: as an <code>Element</code> braces sit outside the normal tree
- * structure and in this context, they never have siblings. however, as <code>Token</code>s, they do have siblings.</p>
+ * <p>a note on sibilings of <code>StructureToken</code>s: as an <code>Element</code> braces sit outside the normal tree structure and in
+ * this context, they never have siblings. however, as <code>Token</code>s, they do have siblings.</p>
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/Structure.pm">CPAN - PPI::Token::Structure</a>
  */
@@ -90,8 +89,8 @@ public final class StructureToken extends Token
             }
 
             /*
-             * anything that slips through is a structure w/ an opening but no closing brace. we just have to go w/ it
-             * and continue as if we started w/ a closing brace
+             * anything that slips through is a structure w/ an opening but no closing brace. we just have to go w/ it and continue as if we
+             * started w/ a closing brace
              */
         }
 
@@ -157,8 +156,8 @@ public final class StructureToken extends Token
             }
 
             /*
-             * anything that slips through is a structure w/ a closing but no opening brace. we just have to go w/ it
-             * and continue as if we started w/ an opening brace
+             * anything that slips through is a structure w/ a closing but no opening brace. we just have to go w/ it and continue as if we
+             * started w/ an opening brace
              */
         }
 

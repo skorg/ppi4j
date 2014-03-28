@@ -1,5 +1,8 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.AttributeToken;
@@ -14,9 +17,6 @@ import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.token.number.FloatNumberToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 /**
  * delegate class responsible for handling text whose token type has yet to be determined
@@ -30,8 +30,7 @@ final class UnknownScanner extends TokenScanner
     //~ Methods
 
     /*
-     * @see
-     * org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnChar(org.scriptkitty.ppi4j.tokenizer.tokenizer.Tokenizer)
+     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnChar(org.scriptkitty.ppi4j.tokenizer.tokenizer.Tokenizer)
      */
     @Override protected boolean tokenizerOnChar(Tokenizer tokenizer) throws TokenizingException
     {
@@ -147,11 +146,10 @@ final class UnknownScanner extends TokenScanner
             else
             {
                 /*
-                 * according to PPI, there are other tests that could be added here before falling back to the default
-                 * 'Cast' token.
+                 * according to PPI, there are other tests that could be added here before falling back to the default 'Cast' token.
                  *
-                 * it should also be noted that 'getLastSignificantToken' never returns null, so an extra level of if/else
-                 * was removed (end result is to become a Cast token anyway)
+                 * it should also be noted that 'getLastSignificantToken' never returns null, so an extra level of if/else was removed (end
+                 * result is to become a Cast token anyway)
                  */
                 tokenizer.switchToToken(CastToken.class);
             }
@@ -245,9 +243,8 @@ final class UnknownScanner extends TokenScanner
         /*
          * dashed word, ie: -foo
          *
-         * PPI has a 'Token::DashedWord' but according to the docs, it is not used and any tokens meeting this criteria
-         * are treated as a 'Token::Word' instead (w/ the exception of file test operators, ie: -e), so ppi4j will just
-         * handle the logic here.
+         * PPI has a 'Token::DashedWord' but according to the docs, it is not used and any tokens meeting this criteria are treated as a
+         * 'Token::Word' instead (w/ the exception of file test operators, ie: -e), so ppi4j will just handle the logic here.
          */
         if (next.matches("[a-zA-Z]"))
         {

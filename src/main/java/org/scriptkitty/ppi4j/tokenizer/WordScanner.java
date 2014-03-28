@@ -1,5 +1,12 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.Token;
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.AttributeToken;
@@ -21,13 +28,6 @@ import org.scriptkitty.ppi4j.token.regexp.REMatchToken;
 import org.scriptkitty.ppi4j.token.regexp.RESubstituteToken;
 import org.scriptkitty.ppi4j.token.regexp.RETransliterateToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 final class WordScanner extends TokenScanner
@@ -211,9 +211,8 @@ final class WordScanner extends TokenScanner
             /*
              * unless it's after 'sub', in which case it's a sub name and an attribute operator
              *
-             * this could have been checked at the top level, but it would impose an additional per-word performance
-             * penalty and all other cases where the attribute operator doesn't directly touch the object name already
-             * work
+             * this could have been checked at the top level, but it would impose an additional per-word performance penalty and all other
+             * cases where the attribute operator doesn't directly touch the object name already work
              */
             if (ElementUtils.isSubWordToken(tokenizer.getLastSignificantToken()))
             {
@@ -277,8 +276,8 @@ final class WordScanner extends TokenScanner
         String word = matcher.group(1);
 
         /*
-         * special case: eq'foo could be treated like the word "eq'foo", so just unwind and make it "eq" or one of the
-         * other entries in the BACKOFF set.
+         * special case: eq'foo could be treated like the word "eq'foo", so just unwind and make it "eq" or one of the other entries in the
+         * BACKOFF set.
          */
         matcher = WORD_S.matcher(word);
         if (matcher.find() && BACKOFF.contains(matcher.group(1)))
@@ -304,8 +303,7 @@ final class WordScanner extends TokenScanner
         }
 
         /*
-         * anything immediately following the separator is converted into a comment, followed by a whitespace (newline)
-         * if it exists.
+         * anything immediately following the separator is converted into a comment, followed by a whitespace (newline) if it exists.
          */
         String line = tokenizer.getRestOfCurrentLine();
         tokenizer.incLineColumn(line.length());

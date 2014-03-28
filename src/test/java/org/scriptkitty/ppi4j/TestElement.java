@@ -1,5 +1,7 @@
 package org.scriptkitty.ppi4j;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,8 +9,6 @@ import org.scriptkitty.ppi4j.token.NumberToken;
 import org.scriptkitty.ppi4j.token.SymbolToken;
 import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.util.TestCaseProvider;
-
-import java.util.List;
 
 
 public class TestElement

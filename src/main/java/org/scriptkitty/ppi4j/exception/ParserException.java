@@ -1,8 +1,8 @@
 package org.scriptkitty.ppi4j.exception;
 
 /**
- * a <code>ParserException</code> is a wrapper for any exceptions that are encountered during parsing and is able to
- * indicate which line number and column the exception occured on.
+ * a <code>ParserException</code> is a wrapper for any exceptions that are encountered during parsing and is able to indicate which line
+ * number and column the exception occured on.
  */
 public class ParserException extends Exception
 {

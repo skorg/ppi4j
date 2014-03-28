@@ -1,8 +1,8 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
-import org.scriptkitty.ppi4j.exception.TokenizingException;
-
 import java.util.regex.Pattern;
+
+import org.scriptkitty.ppi4j.exception.TokenizingException;
 
 
 /**

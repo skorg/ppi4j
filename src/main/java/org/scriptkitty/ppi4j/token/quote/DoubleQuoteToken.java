@@ -1,8 +1,8 @@
 package org.scriptkitty.ppi4j.token.quote;
 
-import org.scriptkitty.ppi4j.token.QuoteToken;
-
 import java.util.regex.Pattern;
+
+import org.scriptkitty.ppi4j.token.QuoteToken;
 
 
 /**

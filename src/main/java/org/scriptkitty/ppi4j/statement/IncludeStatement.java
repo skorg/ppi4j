@@ -1,7 +1,10 @@
 package org.scriptkitty.ppi4j.statement;
 
-import org.scriptkitty.perl.lang.Words;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+import org.scriptkitty.perl.lang.Words;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Statement;
 import org.scriptkitty.ppi4j.Token;
@@ -12,10 +15,6 @@ import org.scriptkitty.ppi4j.token.QuoteToken;
 import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 
 /**
@@ -54,8 +53,8 @@ public class IncludeStatement extends Statement
     /**
      * get the arguments passed to the module.
      *
-     * <p>arguments are what follow the module/pragma or version depenency declaration, i.e. what is used to construct
-     * the what gets passed to the module's <code>import</code> subroutine.</p>
+     * <p>arguments are what follow the module/pragma or version depenency declaration, i.e. what is used to construct the what gets passed
+     * to the module's <code>import</code> subroutine.</p>
      *
      * <p>the returned list will contain <code>Token</code> objects and can be cast as such.</p>
      *
@@ -63,7 +62,7 @@ public class IncludeStatement extends Statement
      */
     public List<Element> getArguments()
     {
-        List<Element> args = new ArrayList<Element>(getSigChildren());
+        List<Element> args = new ArrayList<>(getSigChildren());
 
         // remove the "use", "no", or "require"
         args.remove(0);
@@ -147,8 +146,7 @@ public class IncludeStatement extends Statement
     /**
      * get the <code>Token</code> that represents the name of what is being 'included'.
      *
-     * <p>this is a convienence method that will return either the version of perl the code depends on or the module
-     * being 'included'.</p>
+     * <p>this is a convienence method that will return either the version of perl the code depends on or the module being 'included'.</p>
      *
      * @return version dependency or module name
      *
@@ -249,8 +247,8 @@ public class IncludeStatement extends Statement
     /**
      * does this include statement represent a pragma?
      *
-     * <p>note: ppi4j assumes that any "module name" matching a set of lowercase letters (and perhaps number, as in the
-     * case of <code>use utf8;</code>) is a prama.</p>
+     * <p>note: ppi4j assumes that any "module name" matching a set of lowercase letters (and perhaps number, as in the case of <code>use
+     * utf8;</code>) is a prama.</p>
      *
      * @return <code>true</code> if the include is for a pragma, <code>false</code> otherwise
      *

@@ -1,13 +1,11 @@
 package org.scriptkitty.ppi4j.token;
 
 import org.scriptkitty.perl.lang.Operators;
-
 import org.scriptkitty.ppi4j.Token;
 
 
 /**
- * an <code>OperatorToken</code> represents all operator tokens, including ones that look like <code>WordToken</code>
- * objects.
+ * an <code>OperatorToken</code> represents all operator tokens, including ones that look like <code>WordToken</code> objects.
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Token/Operator.pm">CPAN - PPI::Token::Operator</a>
  */

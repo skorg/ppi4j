@@ -1,8 +1,8 @@
 package org.scriptkitty.ppi4j.token;
 
-import org.scriptkitty.ppi4j.Token;
-
 import java.util.List;
+
+import org.scriptkitty.ppi4j.Token;
 
 
 /**
@@ -39,8 +39,8 @@ public abstract class RegExpToken extends Token implements SectionedToken
     /**
      * get the portion of the regular expression that represents the match string
      *
-     * <p>if the expression does not have a match string or if the expression is incomplete (missing the closing
-     * delimiter), <code>null</code> will be returned.</p>
+     * <p>if the expression does not have a match string or if the expression is incomplete (missing the closing delimiter), <code>
+     * null</code> will be returned.</p>
      *
      * @return match string or <code>null</code> if it does not exist
      *
@@ -54,8 +54,8 @@ public abstract class RegExpToken extends Token implements SectionedToken
     /**
      * get the list of modifiers assigned to this regular expression
      *
-     * <p><b>note</b>: the tokenizer does not distinguish between what is a valid modifier and what is not. it is up to
-     * the calling user to validate the list of values returned.</p>
+     * <p><b>note</b>: the tokenizer does not distinguish between what is a valid modifier and what is not. it is up to the calling user to
+     * validate the list of values returned.</p>
      *
      * @return modifier list
      */
@@ -67,8 +67,8 @@ public abstract class RegExpToken extends Token implements SectionedToken
     /**
      * get the portion of the regular expression that represents the substitution string
      *
-     * <p>if the expression does not have a substitution string or if the expression is incomplete (missing the closing
-     * delimiter), <code>null</code> will be returned.</p>
+     * <p>if the expression does not have a substitution string or if the expression is incomplete (missing the closing delimiter), <code>
+     * null</code> will be returned.</p>
      *
      * @return substitution expression or <code>null</code> if it does not exist
      *

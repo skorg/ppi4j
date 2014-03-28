@@ -1,5 +1,9 @@
 package org.scriptkitty.ppi4j.statement;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Structure;
 import org.scriptkitty.ppi4j.Token;
@@ -13,10 +17,6 @@ import org.scriptkitty.ppi4j.token.WordToken;
 import org.scriptkitty.ppi4j.token.quotelike.QLWordsToken;
 import org.scriptkitty.ppi4j.util.ElementUtils;
 import org.scriptkitty.ppi4j.visitor.INodeVisitor;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -34,8 +34,8 @@ import java.util.Map;
  *   <li><code>continue</code></li>
  * </ul>
  *
- * <p>please note this does <b>not</b> cover "simple" statements with trailing conditions, nor is <code>do</code>
- * considered to be part of a compound statement.</p>
+ * <p>please note this does <b>not</b> cover "simple" statements with trailing conditions, nor is <code>do</code> considered to be part of a
+ * compound statement.</p>
  *
  * @see <a href="http://search.cpan.org/dist/PPI/lib/PPI/Statement/Compound.pm">CPAN - PPI::Statement::Compound</a>
  */
@@ -71,8 +71,7 @@ public class CompoundStatement extends StatementWithBody
     {
         Token token = getFirstToken();
 
-        return (ElementUtils.isWhileWordToken(token) || ElementUtils.isUntilWordToken(token) ||
-            ElementUtils.isForeachWordToken(token));
+        return (ElementUtils.isWhileWordToken(token) || ElementUtils.isUntilWordToken(token) || ElementUtils.isForeachWordToken(token));
     }
 
     public ConditionStructure getConditional()
@@ -208,10 +207,10 @@ public class CompoundStatement extends StatementWithBody
     /**
      * is the compound statement valid syntactically?
      *
-     * <p>this method will return <code>true</code> in all cases except when <code>getType()</code> indicates it is an
-     * <code>if</code> or <code>unless</code> statement. the reason for this is that PPI (and by extension ppi4j) will
-     * parse the following into a compound statement even though it is not valid syntax in order to capture the <code>
-     * elsif</code>/<code>else</code> portions all in one statement.</p>
+     * <p>this method will return <code>true</code> in all cases except when <code>getType()</code> indicates it is an <code>if</code> or
+     * <code>unless</code> statement. the reason for this is that PPI (and by extension ppi4j) will parse the following into a compound
+     * statement even though it is not valid syntax in order to capture the <code>elsif</code>/<code>else</code> portions all in one
+     * statement.</p>
      *
      * <pre>
      *   if (...)
@@ -240,8 +239,7 @@ public class CompoundStatement extends StatementWithBody
                 {
                     if (matchesSubclass(element, Structure.class))
                     {
-                        if (!matchesClass(element, BlockStructure.class) &&
-                                !matchesClass(element, ConditionStructure.class))
+                        if (!matchesClass(element, BlockStructure.class) && !matchesClass(element, ConditionStructure.class))
                         {
                             return true;
                         }

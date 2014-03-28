@@ -1,10 +1,10 @@
 package org.scriptkitty.ppi4j.statement;
 
+import java.util.List;
+
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Statement;
 import org.scriptkitty.ppi4j.structure.BlockStructure;
-
-import java.util.List;
 
 
 abstract class StatementWithBody extends Statement

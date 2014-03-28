@@ -53,8 +53,7 @@ final class CommentScanner extends TokenScanner
     }
 
     /*
-     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineEnd(org.scriptkitty.ppi4j.tokenizer.Tokenizer,
-     * java.lang.String)
+     * @see org.scriptkitty.ppi4j.tokenizer.TokenScanner#tokenizerOnLineEnd(org.scriptkitty.ppi4j.tokenizer.Tokenizer, java.lang.String)
      */
     @Override protected void tokenizerOnLineEnd(Tokenizer tokenizer, String line)
     {

@@ -1,5 +1,7 @@
 package org.scriptkitty.ppi4j.tokenizer;
 
+import java.util.regex.Pattern;
+
 import org.scriptkitty.ppi4j.exception.TokenizingException;
 import org.scriptkitty.ppi4j.token.number.BinaryNumberToken;
 import org.scriptkitty.ppi4j.token.number.ExpNumberToken;
@@ -7,12 +9,9 @@ import org.scriptkitty.ppi4j.token.number.FloatNumberToken;
 import org.scriptkitty.ppi4j.token.number.HexNumberToken;
 import org.scriptkitty.ppi4j.token.number.OctalNumberToken;
 
-import java.util.regex.Pattern;
-
 
 /**
- * delegate class responsible for handling the text considered to a number (<code>1</code>) or delegating to another
- * number subclass scanner
+ * delegate class responsible for handling the text considered to a number (<code>1</code>) or delegating to another number subclass scanner
  *
  * @see org.scriptkitty.ppi4j.token.NumberToken
  */
