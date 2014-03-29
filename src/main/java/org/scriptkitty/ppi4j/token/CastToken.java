@@ -1,6 +1,6 @@
 package org.scriptkitty.ppi4j.token;
 
-import org.scriptkitty.perl.lang.Symbols;
+import org.scriptkitty.perl.lang.Language;
 import org.scriptkitty.ppi4j.Token;
 
 
@@ -26,7 +26,7 @@ public class CastToken extends Token
      */
     public boolean isArrayCast()
     {
-        return Symbols.isArraySigil(getContent());
+        return Language.isArraySigil(getContent());
     }
 
     /**
@@ -36,7 +36,7 @@ public class CastToken extends Token
      */
     public boolean isDollarPoundCast()
     {
-        return Symbols.isDollarPound(getContent());
+        return Language.isDollarPound(getContent());
     }
 
     /**
@@ -46,7 +46,7 @@ public class CastToken extends Token
      */
     public boolean isHashCast()
     {
-        return Symbols.isHashSigil(getContent());
+        return Language.isHashSigil(getContent());
     }
 
     /**
@@ -56,6 +56,6 @@ public class CastToken extends Token
      */
     public boolean isScalarCast()
     {
-        return Symbols.isScalarSigil(getContent());
+        return Language.isScalarSigil(getContent());
     }
 }

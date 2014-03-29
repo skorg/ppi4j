@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.scriptkitty.perl.lang.Keyword;
+import org.scriptkitty.perl.lang.Symbol;
 import org.scriptkitty.ppi4j.visitor.INodeVisitor;
 
 
@@ -96,6 +98,16 @@ public abstract class Token extends Element
         }
     }
 
+    public final Symbol toSymbol()
+    {
+        return Symbol.getSymbol(getContent());
+    }
+    
+    public final Keyword toKeyword()
+    {
+        return Keyword.getKeyword(getContent());
+    }
+    
     /*
      * @see org.scriptkitty.ppi4j.Element#getChildren()
      */

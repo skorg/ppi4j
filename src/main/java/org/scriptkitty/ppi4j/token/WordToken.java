@@ -1,7 +1,6 @@
 package org.scriptkitty.ppi4j.token;
 
-import org.scriptkitty.perl.lang.General;
-import org.scriptkitty.perl.lang.Words;
+import org.scriptkitty.perl.lang.Language;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Statement;
 import org.scriptkitty.ppi4j.Token;
@@ -48,7 +47,7 @@ public class WordToken extends Token
      */
     public boolean hasQualifiedName()
     {
-        return General.isQualified(getContent());
+        return Language.isQualified(getContent());
     }
 
     /**
@@ -58,7 +57,7 @@ public class WordToken extends Token
      */
     public boolean isBareword()
     {
-        return Words.isBareword(getContent());
+        return toKeyword().isBareword();
     }
 
     /**
@@ -68,7 +67,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltin()
     {
-        return Words.isBuiltin(getContent());
+        return toKeyword().isBuiltin();
     }
 
     /**
@@ -78,7 +77,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithListContext()
     {
-        return Words.isBuiltinWithListContext(getContent());
+        return toKeyword().isBuiltinWithListContext();
     }
 
     /**
@@ -88,7 +87,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithMultipleArgs()
     {
-        return Words.isBuiltinWithMultipleArgs(getContent());
+        return toKeyword().isBuiltinWithMultipleArgs();
     }
 
     /**
@@ -98,7 +97,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithNoArgs()
     {
-        return Words.isBuiltinWithNoArgs(getContent());
+        return toKeyword().isBuiltinWithNoArgs();
     }
 
     /**
@@ -108,7 +107,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithOneArg()
     {
-        return Words.isBuiltinWithOneArg(getContent());
+        return toKeyword().isBuiltinWithOneArg();
     }
 
     /**
@@ -118,7 +117,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithOptionalArg()
     {
-        return Words.isBuiltinWithOptionalArg(getContent());
+        return toKeyword().isBuiltinWithOptionalArg();
     }
 
     /**
@@ -128,7 +127,7 @@ public class WordToken extends Token
      */
     public boolean isBuiltinWithZeroOrOneArgs()
     {
-        return Words.isBuiltinWithZeroOrOneArgs(getContent());
+        return toKeyword().isBuiltinWithZeroOrOneArgs(getContent());
     }
 
     /**
@@ -151,7 +150,7 @@ public class WordToken extends Token
      */
     public boolean isCompoundKeyword()
     {
-        return Words.isCompoundKeyword(getContent());
+        return toKeyword().isCompoundKeyword();
     }
 
     /**
@@ -161,7 +160,7 @@ public class WordToken extends Token
      */
     public boolean isConditionalKeyword()
     {
-        return Words.isConditionalKeyword(getContent());
+        return toKeyword().isConditionalKeyword();
     }
 
     /**
@@ -171,7 +170,7 @@ public class WordToken extends Token
      */
     public boolean isContinueKeyword()
     {
-        return Words.isContinueKeyword(getContent());
+        return toKeyword().isContinueKeyword();
     }
 
     /**
@@ -181,7 +180,7 @@ public class WordToken extends Token
      */
     public boolean isControlKeyword()
     {
-        return Words.isControlKeyword(getContent());
+        return toKeyword().isControlKeyword();
     }
 
     /**
@@ -191,7 +190,7 @@ public class WordToken extends Token
      */
     public boolean isElseKeyword()
     {
-        return Words.isElseKeyword(getContent());
+        return toKeyword().isElseKeyword();
     }
 
     /**
@@ -201,7 +200,7 @@ public class WordToken extends Token
      */
     public boolean isElsIfKeyword()
     {
-        return Words.isElsIfKeyword(getContent());
+        return toKeyword().isElsIfKeyword();
     }
 
     /**
@@ -213,7 +212,7 @@ public class WordToken extends Token
      */
     public boolean isFileHandle()
     {
-        return Words.isFileHandle(getContent());
+        return toSymbol().isFileHandle();
     }
 
     /**
@@ -223,7 +222,7 @@ public class WordToken extends Token
      */
     public boolean isForeachKeyword()
     {
-        return Words.isForeachKeyword(getContent());
+        return toKeyword().isForeachKeyword();
     }
 
     /**
@@ -233,7 +232,7 @@ public class WordToken extends Token
      */
     public boolean isForKeyword()
     {
-        return Words.isForKeyword(getContent());
+        return toKeyword().isForKeyword();
     }
 
     /**
@@ -249,7 +248,7 @@ public class WordToken extends Token
 
     public boolean isIfKeyword()
     {
-        return Words.isIfKeyword(getContent());
+        return toKeyword().isIfKeyword();
     }
 
     /**
@@ -294,7 +293,7 @@ public class WordToken extends Token
      */
     public boolean isLoopKeyword()
     {
-        return Words.isLoopKeyword(getContent());
+        return toKeyword().isLoopKeyword();
     }
 
     /**
@@ -316,7 +315,7 @@ public class WordToken extends Token
      */
     public boolean isNoKeyword()
     {
-        return Words.isNoKeyword(getContent());
+        return toKeyword().isNoKeyword();
     }
 
     /**
@@ -336,7 +335,7 @@ public class WordToken extends Token
 
     public boolean isPackageKeyword()
     {
-        return Words.isPackageKeyword(getContent());
+        return toKeyword().isPackageKeyword();
     }
 
     /**
@@ -346,7 +345,7 @@ public class WordToken extends Token
      */
     public boolean isScheduledKeyword()
     {
-        return Words.isScheduledKeyword(getContent());
+        return toKeyword().isScheduledKeyword();
     }
 
     /**
@@ -356,7 +355,7 @@ public class WordToken extends Token
      */
     public boolean isSubKeyword()
     {
-        return Words.isSubKeyword(getContent());
+        return toKeyword().isSubKeyword();
     }
 
     /**
@@ -383,7 +382,7 @@ public class WordToken extends Token
      */
     public boolean isUnlessKeyword()
     {
-        return Words.isUnlessKeyword(getContent());
+        return toKeyword().isUnlessKeyword();
     }
 
     /**
@@ -393,7 +392,7 @@ public class WordToken extends Token
      */
     public boolean isUntilKeyword()
     {
-        return Words.isUntilKeyword(getContent());
+        return toKeyword().isUntilKeyword();
     }
 
     /**
@@ -403,7 +402,7 @@ public class WordToken extends Token
      */
     public boolean isUseKeyword()
     {
-        return Words.isUseKeyword(getContent());
+        return toKeyword().isUseKeyword();
     }
 
     /**
@@ -413,7 +412,7 @@ public class WordToken extends Token
      */
     public boolean isV6Keyword()
     {
-        return Words.isV6Keyword(getContent());
+        return toKeyword().isV6Keyword();
     }
 
     /**
@@ -423,7 +422,7 @@ public class WordToken extends Token
      */
     public boolean isVariableKeyword()
     {
-        return Words.isVariableKeyword(getContent());
+        return toKeyword().isVariableKeyword();
     }
 
     /**
@@ -433,6 +432,6 @@ public class WordToken extends Token
      */
     public boolean isWhileKeyword()
     {
-        return Words.isWhileKeyword(getContent());
+        return toKeyword().isWhileKeyword();
     }
 }

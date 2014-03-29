@@ -1,6 +1,5 @@
 package org.scriptkitty.ppi4j.token;
 
-import org.scriptkitty.perl.lang.Words;
 
 
 /**
@@ -19,7 +18,7 @@ public final class SeparatorToken extends WordToken
      */
     public boolean isDataSeparator()
     {
-        return Words.isDataSeparator(getContent());
+        return toKeyword().isDataSeparator();
     }
 
     /**
@@ -29,6 +28,6 @@ public final class SeparatorToken extends WordToken
      */
     public boolean isEndSeparator()
     {
-        return Words.isEndSeparator(getContent());
+        return toKeyword().isEndSeparator();
     }
 }

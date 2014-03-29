@@ -3,8 +3,7 @@ package org.scriptkitty.ppi4j.token;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.scriptkitty.perl.lang.General;
-import org.scriptkitty.perl.lang.Symbols;
+import org.scriptkitty.perl.lang.Language;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Structure;
 import org.scriptkitty.ppi4j.Token;
@@ -123,7 +122,7 @@ public class SymbolToken extends Token
         Element next = getNextSignificantSibling();
 
         // easy case, we can't be anything else...
-        if (Symbols.isHashSigil(sigil) || Symbols.isAmpSigil(sigil) || !(next instanceof Structure))
+        if (Language.isHashSigil(sigil) || Language.isAmpSigil(sigil) || !(next instanceof Structure))
         {
             return symbol;
         }
@@ -135,7 +134,7 @@ public class SymbolToken extends Token
             return symbol;
         }
 
-        if (Symbols.isScalarSigil(sigil))
+        if (Language.isScalarSigil(sigil))
         {
             Element before = getPrevSignificantSibling();
             if (before instanceof CastToken)
@@ -156,7 +155,7 @@ public class SymbolToken extends Token
                 return "%" + symbol.substring(1);
             }
         }
-        else if (Symbols.isArraySigil(sigil))
+        else if (Language.isArraySigil(sigil))
         {
             if (type == Structure.BraceType.CURLY)
             {
@@ -184,6 +183,6 @@ public class SymbolToken extends Token
      */
     public final boolean hasQualifiedName()
     {
-        return General.isQualified(getContent());
+        return Language.isQualified(getContent());
     }
 }

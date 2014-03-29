@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.scriptkitty.perl.lang.Words;
+import org.scriptkitty.perl.lang.Keyword;
 import org.scriptkitty.ppi4j.Element;
 import org.scriptkitty.ppi4j.Statement;
 import org.scriptkitty.ppi4j.Token;
@@ -260,7 +260,7 @@ public class IncludeStatement extends Statement
 
         if (!token.isNull())
         {
-            return Words.isPragma(token.getContent());
+            return Keyword.isPragma(getModule().getContent());
         }
 
         return false;
@@ -273,7 +273,7 @@ public class IncludeStatement extends Statement
      */
     public boolean isUseBase()
     {
-        return (isPragma() && Words.isBaseKeyword(getModule().getContent()));
+        return (isPragma() && getModule().toKeyword().isBaseKeyword());
     }
 
     /**
@@ -283,7 +283,7 @@ public class IncludeStatement extends Statement
      */
     public boolean isUseFields()
     {
-        return (isPragma() && Words.isFieldsKeyword(getModule().getContent()));
+        return (isPragma() && getModule().toKeyword().isFieldsKeyword());
     }
 
     /**
@@ -293,7 +293,7 @@ public class IncludeStatement extends Statement
      */
     public boolean isUseParent()
     {
-        return (isPragma() && Words.isParentKeyword(getModule().getContent()));
+        return (isPragma() && getModule().toKeyword().isParentKeyword());
     }
 
     /**
@@ -303,7 +303,7 @@ public class IncludeStatement extends Statement
      */
     public boolean isUseStrict()
     {
-        return (isPragma() && Words.isStrictKeyword(getModule().getContent()));
+        return (isPragma() && getModule().toKeyword().isStrictKeyword());
     }
 
     /**
