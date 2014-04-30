@@ -212,7 +212,7 @@ public class WordToken extends Token
      */
     public boolean isFileHandle()
     {
-        return toSymbol().isFileHandle();
+        return toSymbol().isFileHandleBuiltin();
     }
 
     /**
