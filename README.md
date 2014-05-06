@@ -12,3 +12,5 @@ project's dependencies must be available as plugins in eclipse - how you choose 
 
 once installed, the project can be imported as an existing maven project, however, a side effect of using this mixed maven structure means 
 the test sources need to be manually added to the build path.
+
+[![pbc](http://www.cloudbees.com/sites/default/files/Button-Built-on-CB-1.png)](http://www.cloudbees.com)
